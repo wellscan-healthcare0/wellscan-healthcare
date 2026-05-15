@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tests - Wellscan Path Lab</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#f7fff9;
+padding:40px 7%;
+}
+
+h1{
+text-align:center;
+margin-bottom:30px;
+color:#0b7a3b;
+}
+
+#searchInput{
+width:100%;
+padding:16px;
+border-radius:12px;
+border:1px solid #ccc;
+margin-bottom:30px;
+font-size:16px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+background:#fff;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+th{
+background:#0b7a3b;
+color:#fff;
+padding:16px;
+text-align:left;
+}
+
+td{
+padding:14px;
+border-bottom:1px solid #eee;
+}
+
+tr:hover{
+background:#f3fff6;
+}
+
+.book-btn{
+background:#ff6b00;
+color:#fff;
+padding:10px 14px;
+border-radius:10px;
+text-decoration:none;
+font-size:14px;
+font-weight:600;
+}
+
+@media(max-width:768px){
+
+body{
+padding:20px;
+overflow-x:auto;
+}
+
+table{
+min-width:800px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Search Medical Tests</h1>
+
+<input type="text" id="searchInput" placeholder="Search tests...">
+
+<table id="testTable">
+
+<thead>
+<tr>
+<th>Test Name</th>
+<th>Category</th>
+<th>MRP</th>
+<th>Sample Type</th>
+<th>Container</th>
+<th>Temp</th>
+<th>Book</th>
+</tr>
+</thead>
+
+<tbody id="testBody">
+</tbody>
+
+</table>
+
+<script>
+
+const tests = [
+
+{
+name:"CBC Test",
+category:"Blood Test",
+mrp:"₹299",
+sample:"Blood",
+container:"EDTA",
+temp:"Room Temp"
+},
+
+{
+name:"Vitamin D",
+category:"Vitamin",
+mrp:"₹999",
+sample:"Blood",
+container:"Plain Vial",
+temp:"2-8°C"
+},
+
+{
+name:"Thyroid Profile",
+category:"Hormone",
+mrp:"₹699",
+sample:"Blood",
+container:"Plain Vial",
+temp:"2-8°C"
+},
+
+{
+name:"HbA1c",
+category:"Diabetes",
+mrp:"₹499",
+sample:"Blood",
+container:"EDTA",
+temp:"Room Temp"
+}
+
+];
+
+const testBody = document.getElementById("testBody");
+
+function displayTests(data){
+
+testBody.innerHTML = "";
+
+data.forEach(test => {
+
+testBody.innerHTML += `
+
+<tr>
+
+<td>${test.name}</td>
+
+<td>${test.category}</td>
+
+<td>${test.mrp}</td>
+
+<td>${test.sample}</td>
+
+<td>${test.container}</td>
+
+<td>${test.temp}</td>
+
+<td>
+<a class="book-btn"
+href="https://wa.me/919811356126?text=I want to book ${test.name}">
+Book Now
+</a>
+</td>
+
+</tr>
+
+`;
+
+});
+
+}
+
+displayTests(tests);
+
+document.getElementById("searchInput")
+.addEventListener("keyup", function(){
+
+const value = this.value.toLowerCase();
+
+const filtered = tests.filter(test =>
+test.name.toLowerCase().includes(value)
+);
+
+displayTests(filtered);
+
+});
+
+</script>
+
+</body>
+</html>
