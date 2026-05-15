@@ -18,69 +18,115 @@ font-family:'Poppins',sans-serif;
 }
 
 body{
-background:#f7fff9;
+background:#f4fff7;
 padding:40px 7%;
+color:#222;
 }
 
-h1{
-text-align:center;
-margin-bottom:30px;
+.header{
+display:flex;
+align-items:center;
+gap:15px;
+margin-bottom:35px;
+flex-wrap:wrap;
+}
+
+.header img{
+height:65px;
+}
+
+.header-text h1{
+font-size:34px;
 color:#0b7a3b;
+}
+
+.header-text p{
+color:#666;
+font-size:15px;
+}
+
+.search-box{
+margin-bottom:25px;
 }
 
 #searchInput{
 width:100%;
-padding:16px;
-border-radius:12px;
-border:1px solid #ccc;
-margin-bottom:30px;
+padding:18px;
+border:none;
+border-radius:16px;
 font-size:16px;
+box-shadow:0 5px 18px rgba(0,0,0,0.08);
+outline:none;
+}
+
+.table-wrapper{
+overflow-x:auto;
+background:#fff;
+border-radius:22px;
+box-shadow:0 8px 30px rgba(0,0,0,0.08);
 }
 
 table{
 width:100%;
 border-collapse:collapse;
-background:#fff;
-border-radius:20px;
-overflow:hidden;
-box-shadow:0 5px 20px rgba(0,0,0,0.08);
+min-width:1100px;
 }
 
 th{
 background:#0b7a3b;
 color:#fff;
-padding:16px;
+padding:18px;
 text-align:left;
+font-size:15px;
 }
 
 td{
-padding:14px;
+padding:16px;
 border-bottom:1px solid #eee;
+font-size:14px;
 }
 
 tr:hover{
-background:#f3fff6;
+background:#f2fff5;
+}
+
+.category{
+display:inline-block;
+padding:7px 12px;
+border-radius:999px;
+background:#e8fff0;
+color:#0b7a3b;
+font-weight:600;
+font-size:12px;
 }
 
 .book-btn{
 background:#ff6b00;
 color:#fff;
-padding:10px 14px;
+padding:10px 16px;
 border-radius:10px;
 text-decoration:none;
-font-size:14px;
 font-weight:600;
+display:inline-block;
+}
+
+.book-btn:hover{
+opacity:.9;
 }
 
 @media(max-width:768px){
 
 body{
 padding:20px;
-overflow-x:auto;
 }
 
-table{
-min-width:800px;
+.header{
+flex-direction:column;
+align-items:flex-start;
+}
+
+.header-text h1{
+font-size:28px;
 }
 
 }
@@ -90,100 +136,209 @@ min-width:800px;
 
 <body>
 
-<h1>Search Medical Tests</h1>
+<div class="header">
 
-<input type="text" id="searchInput" placeholder="Search tests...">
+<img src="https://i.ibb.co/zH79Y9Lc/logo.png" alt="Wellscan Logo">
 
-<table id="testTable">
+<div class="header-text">
+<h1>Wellscan Path Lab</h1>
+<p>Search pathology tests instantly</p>
+</div>
+
+</div>
+
+<div class="search-box">
+
+<input type="text"
+id="searchInput"
+placeholder="Search tests like CBC, Vitamin D, Thyroid...">
+
+</div>
+
+<div class="table-wrapper">
+
+<table>
 
 <thead>
+
 <tr>
 <th>Test Name</th>
 <th>Category</th>
 <th>MRP</th>
 <th>Sample Type</th>
-<th>Container</th>
 <th>Temp</th>
 <th>Book</th>
 </tr>
+
 </thead>
 
-<tbody id="testBody">
-</tbody>
+<tbody id="testBody"></tbody>
 
 </table>
+
+</div>
 
 <script>
 
 const tests = [
 
 {
-name:"CBC Test",
+name:"CBC (Complete Blood Count)",
 category:"Blood Test",
-mrp:"₹299",
-sample:"Blood",
-container:"EDTA",
-temp:"Room Temp"
+mrp:"₹350",
+sample:"WB-EDTA",
+temp:"Ambient"
 },
 
 {
-name:"Vitamin D",
-category:"Vitamin",
-mrp:"₹999",
-sample:"Blood",
-container:"Plain Vial",
-temp:"2-8°C"
-},
-
-{
-name:"Thyroid Profile",
-category:"Hormone",
-mrp:"₹699",
-sample:"Blood",
-container:"Plain Vial",
-temp:"2-8°C"
+name:"Blood Sugar Fasting (BSF)",
+category:"Diabetes",
+mrp:"₹120",
+sample:"Fluoride Plasma",
+temp:"Ambient"
 },
 
 {
 name:"HbA1c",
 category:"Diabetes",
-mrp:"₹499",
-sample:"Blood",
-container:"EDTA",
-temp:"Room Temp"
+mrp:"₹500",
+sample:"WB-EDTA",
+temp:"Ambient"
+},
+
+{
+name:"LFT (Liver Function Test)",
+category:"Liver Function",
+mrp:"₹800",
+sample:"Serum",
+temp:"2-8°C"
+},
+
+{
+name:"KFT (Kidney Function Test)",
+category:"Kidney Function",
+mrp:"₹850",
+sample:"Serum",
+temp:"2-8°C"
+},
+
+{
+name:"Lipid Profile",
+category:"Heart Health",
+mrp:"₹850",
+sample:"Serum",
+temp:"2-8°C"
+},
+
+{
+name:"Thyroid Profile (T3,T4,TSH)",
+category:"Thyroid",
+mrp:"₹700",
+sample:"Serum",
+temp:"2-8°C"
+},
+
+{
+name:"Vitamin D",
+category:"Vitamin",
+mrp:"₹1500",
+sample:"Serum",
+temp:"2-8°C"
+},
+
+{
+name:"Vitamin B12",
+category:"Vitamin",
+mrp:"₹1200",
+sample:"Serum",
+temp:"2-8°C"
+},
+
+{
+name:"CRP (C-Reactive Protein)",
+category:"Inflammation",
+mrp:"₹500",
+sample:"Serum",
+temp:"2-8°C"
+},
+
+{
+name:"Dengue NS1 Antigen",
+category:"Fever Profile",
+mrp:"₹1200",
+sample:"Serum",
+temp:"2-8°C"
+},
+
+{
+name:"Urine Routine Examination",
+category:"Urine Test",
+mrp:"₹150",
+sample:"Urine",
+temp:"Ambient"
+},
+
+{
+name:"Creatinine",
+category:"Kidney Function",
+mrp:"₹180",
+sample:"Serum",
+temp:"2-8°C"
+},
+
+{
+name:"Ferritin",
+category:"Iron Profile",
+mrp:"₹900",
+sample:"Serum",
+temp:"2-8°C"
+},
+
+{
+name:"HBsAg",
+category:"Viral Marker",
+mrp:"₹500",
+sample:"Serum",
+temp:"2-8°C"
 }
 
 ];
 
-const testBody = document.getElementById("testBody");
+const testBody = document.getElementById('testBody');
 
 function displayTests(data){
 
-testBody.innerHTML = "";
+testBody.innerHTML='';
 
-data.forEach(test => {
+data.forEach(test=>{
 
 testBody.innerHTML += `
 
 <tr>
 
-<td>${test.name}</td>
+<td>
+<strong>${test.name}</strong>
+</td>
 
-<td>${test.category}</td>
+<td>
+<span class="category">${test.category}</span>
+</td>
 
 <td>${test.mrp}</td>
 
 <td>${test.sample}</td>
 
-<td>${test.container}</td>
-
 <td>${test.temp}</td>
 
 <td>
+
 <a class="book-btn"
 href="https://wa.me/919811356126?text=I want to book ${test.name}">
+
 Book Now
+
 </a>
+
 </td>
 
 </tr>
@@ -196,13 +351,16 @@ Book Now
 
 displayTests(tests);
 
-document.getElementById("searchInput")
-.addEventListener("keyup", function(){
+document.getElementById('searchInput')
+.addEventListener('keyup',function(){
 
 const value = this.value.toLowerCase();
 
 const filtered = tests.filter(test =>
-test.name.toLowerCase().includes(value)
+
+test.name.toLowerCase().includes(value) ||
+test.category.toLowerCase().includes(value)
+
 );
 
 displayTests(filtered);
