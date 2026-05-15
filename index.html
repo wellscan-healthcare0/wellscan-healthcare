@@ -204,18 +204,38 @@
     </div>
 
     <form class="booking" action="https://formspree.io/f/mzdoleyb" method="POST">
-      <input type="text" placeholder="Patient Name">
-      <input type="tel" placeholder="Phone Number">
-      <textarea placeholder="Address"></textarea>
-      <select>
-        <option>Select Test</option>
-        <option>Basic Package</option>
-        <option>CBC Test</option>
-        <option>Thyroid Profile</option>
-      </select>
-      <button class="btn primary" type="submit">Place Order</button>
-      <p style="margin-top:15px;color:#0b7a3b;font-weight:600">Customer order details will be sent directly to your email after Formspree integration.</p>
-    </form>
+
+  <input type="text" 
+         name="Patient Name" 
+         placeholder="Patient Name" 
+         required>
+
+  <input type="tel" 
+         name="Phone Number" 
+         placeholder="Phone Number" 
+         required>
+
+  <textarea 
+         name="Address" 
+         placeholder="Address" 
+         required></textarea>
+
+  <select name="Selected Package" required>
+    <option value="">Select Package</option>
+    <option>Basic Package - ₹1000</option>
+    <option>Complete Health Package - ₹2600</option>
+    <option>Exclusive Package - ₹3600</option>
+  </select>
+
+  <textarea 
+         name="Additional Notes" 
+         placeholder="Additional Notes"></textarea>
+
+  <button class="btn primary" type="submit">
+    Place Order
+  </button>
+
+</form>  
   </section>
 
   <footer>
