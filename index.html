@@ -11,7 +11,7 @@
   <style>
     *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
     body{background:#f7fff9;color:#222}
-    nav{
+.navbar{
 display:flex;
 justify-content:space-between;
 align-items:center;
@@ -20,10 +20,94 @@ background:#fff;
 position:sticky;
 top:0;
 z-index:1000;
-box-shadow:0 4px 15px rgba(0,0,0,0.08);
+box-shadow:0 4px 12px rgba(0,0,0,.08);
 }
 
-{text-decoration:none;color:#333;margin-left:18px;font-weight:500}
+.logo-area{
+display:flex;
+align-items:center;
+gap:10px;
+}
+
+.logo-img{
+height:55px;
+}
+
+.logo-area h2{
+color:#0b7a3b;
+font-size:26px;
+}
+
+.logo-area p{
+color:#ff6b00;
+font-size:13px;
+font-weight:700;
+}
+
+.menu{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+.menu a{
+text-decoration:none;
+color:#222;
+font-weight:600;
+}
+
+.dropdown{
+position:relative;
+}
+
+.dropbtn{
+background:#0b7a3b;
+color:#fff;
+border:none;
+padding:10px 18px;
+border-radius:10px;
+cursor:pointer;
+font-weight:600;
+}
+
+.dropdown-content{
+display:none;
+position:absolute;
+background:#fff;
+min-width:220px;
+box-shadow:0 10px 25px rgba(0,0,0,.12);
+border-radius:14px;
+overflow:hidden;
+top:50px;
+}
+
+.dropdown-content a{
+display:block;
+padding:14px;
+}
+
+.dropdown-content a:hover{
+background:#f4fff7;
+color:#0b7a3b;
+}
+
+.dropdown:hover .dropdown-content{
+display:block;
+}
+
+@media(max-width:768px){
+
+.navbar{
+flex-direction:column;
+gap:15px;
+}
+
+.menu{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+}
     .hero{min-height:90vh;display:flex;align-items:center;justify-content:space-between;padding:60px 7%;gap:40px;flex-wrap:wrap;background:linear-gradient(135deg,#effff5,#dff8ea)}
     .hero-text{flex:1;min-width:300px}
     .hero-text h1{font-size:58px;line-height:1.15;color:#083d22;margin-bottom:20px}
@@ -60,15 +144,51 @@ box-shadow:0 4px 15px rgba(0,0,0,0.08);
 }  </style>
 </head>
 <body>
-  <nav>
-    <nav>
+
+  <nav class="navbar">
+
+<div class="logo-area">
+
+<img src="https://i.ibb.co/zH79Y9Lc/logo.png" class="logo-img">
 
 <div>
-  <a href="#package">Package</a>
-  <a href="#services">Services</a>
-  <a href="#booking">Booking</a>
+<h2>Wellscan</h2>
+<p>PATH LAB</p>
 </div>
-  </nav>
+
+</div>
+
+<div class="menu">
+
+<a href="index.html">Home</a>
+
+<div class="dropdown">
+
+<button class="dropbtn">Packages</button>
+
+<div class="dropdown-content">
+
+<a href="package.html?type=basic">Basic</a>
+
+<a href="package.html?type=vitamin">Vitamin</a>
+
+<a href="package.html?type=male">Male</a>
+
+<a href="package.html?type=female">Female</a>
+
+<a href="package.html?type=executive">Executive</a>
+
+</div>
+
+</div>
+
+<a href="tests.html">Tests</a>
+
+<a href="#booking">Booking</a>
+
+</div>
+
+</nav>
 
   <section class="hero">
     <div class="hero-text">
