@@ -340,7 +340,7 @@ border:2px solid #e7f7ed;
 padding:28px;
 border-radius:22px;
 text-align:center;
-transition:.4s;
+transition:1s ease;
 box-shadow:0 10px 25px rgba(0,0,0,.05);
 opacity:0;
 transform:translateY(50px);
@@ -1025,13 +1025,13 @@ const updateCounter = () => {
 const target = +counter.getAttribute('data-target');
 const current = +counter.innerText;
 
-const increment = target / 80;
+const increment = target / 180;
 
 if(current < target){
 
 counter.innerText = Math.ceil(current + increment);
 
-setTimeout(updateCounter,30);
+setTimeout(updateCounter,60);
 
 }else{
 
