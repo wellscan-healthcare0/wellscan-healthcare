@@ -135,6 +135,193 @@ justify-content:center;
     .card h4{font-size:24px;margin-bottom:10px}
     .booking{background:#fff;border-radius:25px;padding:40px;max-width:750px;margin:auto;box-shadow:0 8px 25px rgba(0,0,0,.08)}
     .booking input,.booking textarea,.booking select{width:100%;padding:15px;margin-bottom:18px;border-radius:12px;border:1px solid #ddd}
+    #popular-packages{
+padding:90px 7%;
+background:linear-gradient(135deg,#f5fff8,#ebfff3);
+overflow:hidden;
+}
+
+.subtitle{
+margin-top:12px;
+color:#666;
+font-size:16px;
+}
+
+.slider-wrapper{
+display:flex;
+align-items:center;
+gap:18px;
+position:relative;
+}
+
+.package-slider{
+display:flex;
+gap:24px;
+overflow-x:auto;
+scroll-behavior:smooth;
+padding:15px 4px;
+scrollbar-width:none;
+}
+
+.package-slider::-webkit-scrollbar{
+display:none;
+}
+
+.package-card{
+min-width:340px;
+background:#fff;
+padding:30px;
+border-radius:28px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+flex-shrink:0;
+transition:.35s;
+border:1px solid #edf5ef;
+}
+
+.package-card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 45px rgba(0,0,0,.12);
+}
+
+.badge{
+display:inline-block;
+padding:7px 14px;
+border-radius:999px;
+background:#0b7a3b;
+color:#fff;
+font-size:12px;
+font-weight:700;
+margin-bottom:18px;
+}
+
+.package-card h3{
+font-size:28px;
+margin-bottom:12px;
+color:#083d22;
+}
+
+.desc{
+font-size:15px;
+color:#666;
+margin-bottom:24px;
+line-height:1.6;
+}
+
+.package-card ul{
+list-style:none;
+margin-bottom:28px;
+}
+
+.package-card li{
+margin-bottom:11px;
+font-size:15px;
+color:#444;
+}
+
+.bottom{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.price{
+font-size:34px;
+font-weight:700;
+color:#ff6b00;
+}
+
+.view-btn{
+padding:12px 20px;
+background:#0b7a3b;
+color:#fff;
+text-decoration:none;
+border-radius:12px;
+font-weight:600;
+transition:.3s;
+}
+
+.view-btn:hover{
+background:#095c2d;
+}
+
+.nav-btn{
+width:55px;
+height:55px;
+border:none;
+border-radius:50%;
+background:#0b7a3b;
+color:#fff;
+font-size:20px;
+cursor:pointer;
+flex-shrink:0;
+transition:.3s;
+box-shadow:0 8px 20px rgba(11,122,59,.25);
+}
+
+.nav-btn:hover{
+transform:scale(1.08);
+}
+
+.purple .badge{
+background:#7c3aed;
+}
+
+.blue .badge{
+background:#2563eb;
+}
+
+.pink .badge{
+background:#db2777;
+}
+
+.dark .badge{
+background:#111827;
+}
+
+.rose .badge{
+background:#e11d48;
+}
+
+.gold .badge{
+background:#ca8a04;
+}
+
+@media(max-width:768px){
+
+#popular-packages{
+padding:70px 20px;
+}
+
+.package-card{
+min-width:88%;
+padding:24px;
+}
+
+.package-card h3{
+font-size:24px;
+}
+
+.price{
+font-size:28px;
+}
+
+.nav-btn{
+display:none;
+}
+
+.bottom{
+flex-direction:column;
+align-items:flex-start;
+}
+
+.view-btn{
+width:100%;
+text-align:center;
+}
+
+}
     footer{background:#083d22;color:#fff;text-align:center;padding:50px 7%}
     .whatsapp{position:fixed;right:20px;bottom:20px;width:65px;height:65px;background:#25d366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:34px;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,.2)}
     @media(max-width:768px){
@@ -207,86 +394,435 @@ justify-content:center;
 
     <img src="https://images.unsplash.com/photo-1579165466741-7f35e4755660?q=80&w=1200&auto=format&fit=crop" alt="Lab">
   </section>
+<!-- DELETE OLD PACKAGE SECTION AND PASTE THIS COMPLETE NEW SECTION -->
 
-  <section id="package">
-    <div class="title">
-      <h2>Health Packages</h2>
-      <p style="margin-top:10px;color:#555">Swipe packages left to explore package </p>
-    </div>
+<section id="popular-packages">
 
-    <div class="package-slider">
+<div class="title">
+<h2>Popular Packages</h2>
+<p class="subtitle">
+Explore our most booked health checkup packages
+</p>
+</div>
 
-    <div class="package-slide"><div class="package" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">
-      <h3>BASIC PACKAGE</h3>
-      <div class="price">₹1000</div>
+<div class="slider-wrapper">
 
-      <ul>
-        <li>✔ CBC (Complete Blood Count)</li>
-        <li>✔ ESR</li>
-        <li>✔ BSF (Blood Sugar Fasting)</li>
-        <li>✔ KFT (Kidney Function Test)</li>
-        <li>✔ LFT (Liver Function Test)</li>
-        <li>✔ Urine Routine & Microscopy</li>
-        <li>✔ TFT (Thyroid Function Test)</li>
-        <li>✔ Lipid Profile</li>
-      </ul>
+<button class="nav-btn left-btn" onclick="slidePackage(-1)">
+<i class="fa-solid fa-arrow-left"></i>
+</button>
 
-      <br>
-      <button class="btn secondary">Click To Book Package</button>
-    </div></div>
+<div class="package-slider" id="packageSlider">
 
-    <br><br>
+<!-- BASIC -->
+<div class="package-card">
+<span class="badge">Popular</span>
 
-    <div class="package-slide"><div class="package" style="background:linear-gradient(135deg,#5b21b6,#3b0764)" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">
-      <h3>EXCLUSIVE PACKAGE</h3>
-      <div class="price">₹3600</div>
+<h3>Basic Package</h3>
 
-      <ul>
-        <li>✔ CBC (Complete Blood Count)</li>
-        <li>✔ ESR</li>
-        <li>✔ BSF (Blood Sugar Fasting)</li>
-        <li>✔ KFT (Kidney Function Test)</li>
-        <li>✔ LFT (Liver Function Test)</li>
-        <li>✔ Lipid Profile</li>
-        <li>✔ Thyroid Profile (T3, T4, TSH)</li>
-        <li>✔ Iron Studies</li>
-        <li>✔ Vitamin D</li>
-        <li>✔ Vitamin B12</li>
-        <li>✔ HbA1c</li>
-        <li>✔ Urine Routine & Microscopy</li>
-        <li>✔ CRP (C-Reactive Protein)</li>
-        <li>✔ Ferritin</li>
-      </ul>
+<p class="desc">
+Routine health checkup for daily wellness monitoring
+</p>
 
-      <br>
-      <button class="btn secondary">Book Exclusive Package</button>
-    </div></div>
+<ul>
+<li>✔ CBC Test</li>
+<li>✔ LFT Test</li>
+<li>✔ KFT Test</li>
+<li>✔ Lipid Profile</li>
+</ul>
 
-    <br><br>
+<div class="bottom">
+<div class="price">₹1000</div>
 
-    <div class="package-slide"><div class="package" style="background:linear-gradient(135deg,#ff4d00,#d62828)" onclick="document.getElementById('booking').scrollIntoView({behavior:'smooth'})">
-      <h3>COMPLETE HEALTH PACKAGE</h3>
-      <div class="price">₹2600</div>
+<a href="basic-package.html" class="view-btn">
+View Details
+</a>
+</div>
 
-      <ul>
-        <li>✔ CBC (Complete Blood Count)</li>
-        <li>✔ ESR</li>
-        <li>✔ BSF (Blood Sugar Fasting)</li>
-        <li>✔ KFT (Kidney Function Test)</li>
-        <li>✔ LFT (Liver Function Test)</li>
-        <li>✔ Lipid Profile</li>
-        <li>✔ HbA1c</li>
-        <li>✔ Thyroid Profile (T3, T4, TSH)</li>
-        <li>✔ Iron Studies</li>
-        <li>✔ Vitamin D</li>
-        <li>✔ Vitamin B12</li>
-        <li>✔ Urine Routine & Microscopy</li>
-      </ul>
+</div>
 
-      <br>
-      <button class="btn secondary">Book Complete Package</button>
-    </div>
-  </div>
+<!-- VITAMIN -->
+<div class="package-card purple">
+<span class="badge">Vitamin Care</span>
+
+<h3>Vitamin Health Care</h3>
+
+<p class="desc">
+Vitamin deficiency and nutrition profile package
+</p>
+
+<ul>
+<li>✔ Vitamin D</li>
+<li>✔ Vitamin B12</li>
+<li>✔ Calcium</li>
+<li>✔ Iron Profile</li>
+</ul>
+
+<div class="bottom">
+<div class="price">₹1800</div>
+
+<a href="vitamin-health-care.html" class="view-btn">
+View Details
+</a>
+</div>
+
+</div>
+
+<!-- MALE -->
+<div class="package-card blue">
+<span class="badge">Men Wellness</span>
+
+<h3>Male Health Care</h3>
+
+<p class="desc">
+Advanced wellness package specially for men
+</p>
+
+<ul>
+<li>✔ Testosterone</li>
+<li>✔ Thyroid</li>
+<li>✔ Diabetes Test</li>
+<li>✔ Liver Profile</li>
+</ul>
+
+<div class="bottom">
+<div class="price">₹2500</div>
+
+<a href="male-health-care.html" class="view-btn">
+View Details
+</a>
+</div>
+
+</div>
+
+<!-- FEMALE -->
+<div class="package-card pink">
+<span class="badge">Women Wellness</span>
+
+<h3>Female Health Care</h3>
+
+<p class="desc">
+Complete female preventive health screening
+</p>
+
+<ul>
+<li>✔ CBC Test</li>
+<li>✔ Thyroid</li>
+<li>✔ Vitamin D</li>
+<li>✔ Hormonal Profile</li>
+</ul>
+
+<div class="bottom">
+<div class="price">₹2700</div>
+
+<a href="female-health-care.html" class="view-btn">
+View Details
+</a>
+</div>
+
+</div>
+
+<!-- MALE HORMONE -->
+<div class="package-card dark">
+<span class="badge">Hormone Care</span>
+
+<h3>Male Hormone Care</h3>
+
+<p class="desc">
+Male hormone and testosterone balance screening
+</p>
+
+<ul>
+<li>✔ Testosterone</li>
+<li>✔ FSH</li>
+<li>✔ LH</li>
+<li>✔ Prolactin</li>
+</ul>
+
+<div class="bottom">
+<div class="price">₹3200</div>
+
+<a href="male-hormone-health-care.html" class="view-btn">
+View Details
+</a>
+</div>
+
+</div>
+
+<!-- FEMALE HORMONE -->
+<div class="package-card rose">
+<span class="badge">Hormonal Care</span>
+
+<h3>Female Hormone Care</h3>
+
+<p class="desc">
+Women hormone profile for complete wellness
+</p>
+
+<ul>
+<li>✔ Estrogen</li>
+<li>✔ Progesterone</li>
+<li>✔ FSH</li>
+<li>✔ LH</li>
+</ul>
+
+<div class="bottom">
+<div class="price">₹3500</div>
+
+<a href="female-hormone-health-care.html" class="view-btn">
+View Details
+</a>
+</div>
+
+</div>
+
+<!-- EXECUTIVE -->
+<div class="package-card gold">
+<span class="badge">Premium</span>
+
+<h3>Executive Health Care</h3>
+
+<p class="desc">
+Comprehensive executive full body health package
+</p>
+
+<ul>
+<li>✔ CBC Test</li>
+<li>✔ Cardiac Risk</li>
+<li>✔ Thyroid</li>
+<li>✔ Vitamin Profile</li>
+</ul>
+
+<div class="bottom">
+<div class="price">₹4999</div>
+
+<a href="executive-health-care.html" class="view-btn">
+View Details
+</a>
+</div>
+
+</div>
+
+</div>
+
+<button class="nav-btn right-btn" onclick="slidePackage(1)">
+<i class="fa-solid fa-arrow-right"></i>
+</button>
+
+</div>
+
+</section>
+
+<style>
+
+#popular-packages{
+padding:90px 7%;
+background:linear-gradient(135deg,#f5fff8,#ebfff3);
+overflow:hidden;
+}
+
+.subtitle{
+margin-top:12px;
+color:#666;
+font-size:16px;
+}
+
+.slider-wrapper{
+display:flex;
+align-items:center;
+gap:18px;
+position:relative;
+}
+
+.package-slider{
+display:flex;
+gap:24px;
+overflow-x:auto;
+scroll-behavior:smooth;
+padding:15px 4px;
+scrollbar-width:none;
+}
+
+.package-slider::-webkit-scrollbar{
+display:none;
+}
+
+.package-card{
+min-width:340px;
+background:#fff;
+padding:30px;
+border-radius:28px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+flex-shrink:0;
+transition:.35s;
+border:1px solid #edf5ef;
+}
+
+.package-card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 45px rgba(0,0,0,.12);
+}
+
+.badge{
+display:inline-block;
+padding:7px 14px;
+border-radius:999px;
+background:#0b7a3b;
+color:#fff;
+font-size:12px;
+font-weight:700;
+margin-bottom:18px;
+}
+
+.package-card h3{
+font-size:28px;
+margin-bottom:12px;
+color:#083d22;
+}
+
+.desc{
+font-size:15px;
+color:#666;
+margin-bottom:24px;
+line-height:1.6;
+}
+
+.package-card ul{
+list-style:none;
+margin-bottom:28px;
+}
+
+.package-card li{
+margin-bottom:11px;
+font-size:15px;
+color:#444;
+}
+
+.bottom{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.price{
+font-size:34px;
+font-weight:700;
+color:#ff6b00;
+}
+
+.view-btn{
+padding:12px 20px;
+background:#0b7a3b;
+color:#fff;
+text-decoration:none;
+border-radius:12px;
+font-weight:600;
+transition:.3s;
+}
+
+.view-btn:hover{
+background:#095c2d;
+}
+
+.nav-btn{
+width:55px;
+height:55px;
+border:none;
+border-radius:50%;
+background:#0b7a3b;
+color:#fff;
+font-size:20px;
+cursor:pointer;
+flex-shrink:0;
+transition:.3s;
+box-shadow:0 8px 20px rgba(11,122,59,.25);
+}
+
+.nav-btn:hover{
+transform:scale(1.08);
+}
+
+/* CARD COLORS */
+
+.purple .badge{
+background:#7c3aed;
+}
+
+.blue .badge{
+background:#2563eb;
+}
+
+.pink .badge{
+background:#db2777;
+}
+
+.dark .badge{
+background:#111827;
+}
+
+.rose .badge{
+background:#e11d48;
+}
+
+.gold .badge{
+background:#ca8a04;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+#popular-packages{
+padding:70px 20px;
+}
+
+.package-card{
+min-width:88%;
+padding:24px;
+}
+
+.package-card h3{
+font-size:24px;
+}
+
+.price{
+font-size:28px;
+}
+
+.nav-btn{
+display:none;
+}
+
+.bottom{
+flex-direction:column;
+align-items:flex-start;
+}
+
+.view-btn{
+width:100%;
+text-align:center;
+}
+
+}
+
+</style>
+
+<script>
+
+function slidePackage(direction){
+
+const slider = document.getElementById('packageSlider');
+
+slider.scrollBy({
+left: direction * 380,
+behavior:'smooth'
+});
+
+}
+
+</script>
+  
   </section>
 
   <section id="services">
@@ -373,5 +909,19 @@ justify-content:center;
   <a class="whatsapp" href="https://wa.me/919811356126">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
+  <script>
+
+function slidePackage(direction){
+
+const slider = document.getElementById('packageSlider');
+
+slider.scrollBy({
+left: direction * 380,
+behavior:'smooth'
+});
+
+}
+
+</script>
 </body>
 </html>
