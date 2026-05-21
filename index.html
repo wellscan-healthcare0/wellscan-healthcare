@@ -413,15 +413,21 @@ font-size:34px;
 
 <div class="dropdown-content">
 
-<a href="basic-package.html">Basic</a>
-  
-<a href="package.html?type=vitamin">Vitamin</a>
+<a href="basic-package.html">Basic Package</a>
 
-<a href="package.html?type=male">Male</a>
+<a href="vitamin-health-care.html">Vitamin Package</a>
 
-<a href="package.html?type=female">Female</a>
+<a href="male-health-care.html">Male Health Package</a>
 
-<a href="package.html?type=executive">Executive</a>
+<a href="female-health-care.html">Female Health Package</a>
+
+<a href="male-hormone-health-care.html">Male Hormone Package</a>
+
+<a href="female-hormone-health-care.html">Female Hormone Package</a>
+
+<a href="executive-health-care.html">Executive Package</a>
+
+</div>
 
 </div>
 
@@ -499,7 +505,8 @@ View Details
 </div>
 
 <!-- VITAMIN -->
-<div class="package-card purple">
+<div class="package-card"
+onclick="window.location.href='vitamin-health-care.html'">
 <span class="badge">Vitamin Care</span>
 
 <h3>Vitamin Health Care</h3>
@@ -706,6 +713,7 @@ display:none;
 
 .package-card{
 min-width:340px;
+cursor:pointer;
 background:#fff;
 padding:30px;
 border-radius:28px;
