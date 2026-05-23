@@ -386,7 +386,154 @@ font-size:34px;
       .hero{text-align:center}
       .hero-text h1{font-size:42px}
       .btns,.badges{justify-content:center}
-}  </style>
+} 
+  /* FOOTER */
+
+.main-footer{
+background:#083d22;
+color:#fff;
+margin-top:80px;
+overflow:hidden;
+}
+
+.footer-top{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:40px;
+padding:70px 7%;
+}
+
+.footer-logo{
+width:220px;
+margin-bottom:20px;
+background:#fff;
+padding:10px;
+border-radius:18px;
+}
+
+.footer-text{
+line-height:1.8;
+color:#d8e7dd;
+margin-bottom:25px;
+}
+
+.footer-box h3{
+font-size:24px;
+margin-bottom:22px;
+color:#fff;
+}
+
+.footer-box ul{
+list-style:none;
+}
+
+.footer-box ul li{
+margin-bottom:14px;
+color:#d8e7dd;
+}
+
+.footer-box ul li a{
+color:#d8e7dd;
+text-decoration:none;
+transition:.3s;
+}
+
+.footer-box ul li a:hover{
+color:#7dffb0;
+}
+
+.footer-box p{
+margin-bottom:16px;
+line-height:1.7;
+color:#d8e7dd;
+}
+
+.footer-box i{
+margin-right:10px;
+color:#7dffb0;
+}
+
+.social-icons{
+display:flex;
+gap:14px;
+margin-top:20px;
+}
+
+.social-icons a{
+width:45px;
+height:45px;
+border-radius:50%;
+background:#0b7a3b;
+display:flex;
+align-items:center;
+justify-content:center;
+color:#fff;
+text-decoration:none;
+font-size:18px;
+transition:.3s;
+}
+
+.social-icons a:hover{
+transform:translateY(-5px);
+background:#ff6b00;
+}
+
+.map-btn{
+display:inline-block;
+margin-top:10px;
+padding:12px 18px;
+background:#ff6b00;
+color:#fff;
+text-decoration:none;
+border-radius:12px;
+font-weight:600;
+transition:.3s;
+}
+
+.map-btn:hover{
+background:#ff7f22;
+}
+
+.footer-map{
+width:100%;
+height:320px;
+overflow:hidden;
+}
+
+.footer-map iframe{
+width:100%;
+height:100%;
+border:none;
+filter:grayscale(100%);
+}
+
+.footer-bottom{
+padding:22px;
+text-align:center;
+background:#062d18;
+font-size:14px;
+color:#cfe6d7;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.footer-top{
+padding:60px 20px;
+gap:35px;
+}
+
+.footer-logo{
+width:180px;
+}
+
+.footer-map{
+height:250px;
+}
+
+}
+  </style>
 </head>
 <body>
 
@@ -995,12 +1142,413 @@ Trusted diagnostic services with advanced technology
   </section>
 
   <footer>
-    <h2>WellScan Healthcare</h2>
-    <p>Accurate Results, Better Health</p>
-    <br>
-    <p>📞 +91 98113 56126</p>
-    <p>✉ shanawaz.cnc@gmail.com</p>
-    <p>📍 Karol Bagh, New Delhi</p>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>WellScan Pathology Lab Footer</title>
+
+<meta name="description" content="WellScan Pathology Lab - Lab Test, Diet Consultation and Sample Collection Services in Delhi with Home Collection Facility.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#f6fff9;
+overflow-x:hidden;
+}
+
+/* FOOTER */
+
+.footer-section{
+background:linear-gradient(135deg,#0b7a3b,#084d25);
+padding:70px 7% 0;
+position:relative;
+overflow:hidden;
+}
+
+/* TOP AREA */
+
+.footer-top{
+display:grid;
+grid-template-columns:1.2fr 1fr 1fr 1fr;
+gap:40px;
+padding-bottom:60px;
+border-bottom:1px solid rgba(255,255,255,.12);
+}
+
+/* LOGO */
+
+.footer-logo{
+width:220px;
+margin-bottom:20px;
+}
+
+.footer-about p{
+font-size:15px;
+line-height:1.9;
+color:#dfffea;
+margin-top:10px;
+}
+
+/* TITLE */
+
+.footer-title{
+font-size:24px;
+font-weight:600;
+margin-bottom:25px;
+color:#fff;
+position:relative;
+}
+
+.footer-title::after{
+content:'';
+position:absolute;
+left:0;
+bottom:-10px;
+width:55px;
+height:3px;
+background:#ff7a00;
+border-radius:20px;
+}
+
+/* LINKS */
+
+.footer-links a{
+display:block;
+text-decoration:none;
+color:#dfffea;
+margin-bottom:16px;
+font-size:15px;
+transition:.3s;
+}
+
+.footer-links a:hover{
+color:#ffb26a;
+padding-left:7px;
+}
+
+/* CONTACT */
+
+.contact-info p{
+color:#dfffea;
+font-size:15px;
+line-height:1.9;
+margin-bottom:18px;
+display:flex;
+align-items:flex-start;
+gap:12px;
+}
+
+.contact-info i{
+color:#ff7a00;
+margin-top:4px;
+}
+
+/* SOCIAL */
+
+.social-icons{
+display:flex;
+gap:14px;
+margin-top:25px;
+flex-wrap:wrap;
+}
+
+.social-icons a{
+width:48px;
+height:48px;
+border-radius:50%;
+background:rgba(255,255,255,.12);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:18px;
+color:#fff;
+text-decoration:none;
+transition:.3s;
+}
+
+.social-icons a:hover{
+background:#ff7a00;
+transform:translateY(-5px);
+}
+
+/* MAP */
+
+.map-box{
+width:100%;
+height:320px;
+overflow:hidden;
+margin-top:50px;
+border-radius:30px 30px 0 0;
+position:relative;
+}
+
+.map-box iframe{
+width:100%;
+height:100%;
+border:0;
+filter:grayscale(20%);
+}
+
+/* BOTTOM */
+
+.footer-bottom{
+padding:22px 10px;
+text-align:center;
+color:#dfffea;
+font-size:14px;
+background:#06361b;
+}
+
+/* LIVE CHAT */
+
+.live-chat{
+position:fixed;
+right:20px;
+bottom:20px;
+width:65px;
+height:65px;
+background:#25d366;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:32px;
+color:#fff;
+text-decoration:none;
+box-shadow:0 10px 25px rgba(0,0,0,.25);
+z-index:999;
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.08);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+/* MOBILE */
+
+@media(max-width:991px){
+
+.footer-top{
+grid-template-columns:1fr 1fr;
+gap:35px;
+}
+
+}
+
+@media(max-width:768px){
+
+.footer-section{
+padding:60px 20px 0;
+}
+
+.footer-top{
+grid-template-columns:1fr;
+gap:40px;
+}
+
+.footer-title{
+font-size:22px;
+}
+
+.footer-logo{
+width:190px;
+}
+
+.map-box{
+height:260px;
+margin-top:40px;
+border-radius:22px 22px 0 0;
+}
+
+.live-chat{
+width:58px;
+height:58px;
+font-size:28px;
+right:15px;
+bottom:15px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- FOOTER -->
+
+<footer class="footer-section">
+
+<div class="footer-top">
+
+<!-- ABOUT -->
+
+<div class="footer-about">
+
+<img src="logo.png" alt="WellScan Pathology Lab" class="footer-logo">
+
+<p>
+At WellScan Pathology Lab, we provide accurate and affordable
+diagnostic healthcare services with trusted reports and
+home sample collection facility across Delhi.
+</p>
+
+<div class="social-icons">
+
+<a href="#">
+<i class="fa-brands fa-facebook-f"></i>
+</a>
+
+<a href="#">
+<i class="fa-brands fa-instagram"></i>
+</a>
+
+<a href="#">
+<i class="fa-brands fa-linkedin-in"></i>
+</a>
+
+<a href="#">
+<i class="fa-brands fa-youtube"></i>
+</a>
+
+</div>
+
+</div>
+
+<!-- QUICK LINKS -->
+
+<div>
+
+<h3 class="footer-title">Quick Links</h3>
+
+<div class="footer-links">
+
+<a href="#">Home</a>
+<a href="#">About Us</a>
+<a href="#">Services</a>
+<a href="#">Health Packages</a>
+<a href="#">Contact Us</a>
+
+</div>
+
+</div>
+
+<!-- SERVICES -->
+
+<div>
+
+<h3 class="footer-title">Our Services</h3>
+
+<div class="footer-links">
+
+<a href="#">Lab Test</a>
+<a href="#">Diet Consultation</a>
+<a href="#">Sample Collection</a>
+
+</div>
+
+</div>
+
+<!-- CONTACT -->
+
+<div>
+
+<h3 class="footer-title">Contact Details</h3>
+
+<div class="contact-info">
+
+<p>
+<i class="fa-solid fa-phone"></i>
++91 98113 56126
+</p>
+
+<p>
+<i class="fa-solid fa-envelope"></i>
+shanawaz.cnc@gmail.com
+</p>
+
+<p>
+<i class="fa-solid fa-location-dot"></i>
+Tilak Nagar, New Delhi
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- MAP -->
+
+<div class="map-box">
+
+<iframe 
+src="https://maps.google.com/maps?q=Tilak%20Nagar%20New%20Delhi&t=&z=15&ie=UTF8&iwloc=&output=embed"
+allowfullscreen=""
+loading="lazy">
+</iframe>
+
+</div>
+
+<!-- BOTTOM -->
+
+<div class="footer-bottom">
+
+© 2026 WellScan Pathology Lab. All Rights Reserved.
+
+</div>
+
+</footer>
+
+<!-- LIVE CHAT -->
+
+<a href="https://wa.me/919811356126" class="live-chat">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
+<script>
+
+/* FUTURE JS */
+
+console.log("WellScan Footer Loaded");
+
+</script>
+
+</body>
+</html>
   </footer>
 
   <a class="whatsapp" href="https://wa.me/919811356126">
@@ -1070,5 +1618,6 @@ observer.observe(item);
 });
 
 </script>
+  
 </body>
 </html>
