@@ -83,11 +83,39 @@ text-align:center;
 animation:floatImage 4s ease-in-out infinite;
 }
 
+.hero-image{
+flex:1;
+display:flex;
+justify-content:center;
+align-items:center;
+width:100%;
+}
+
 .hero-image img{
 width:100%;
-max-width:520px;
+max-width:620px;
+height:auto;
 border-radius:28px;
 box-shadow:0 18px 40px rgba(0,0,0,.15);
+object-fit:cover;
+}
+
+/* MOBILE IMAGE FIX */
+
+@media(max-width:768px){
+
+.hero-image{
+margin-top:25px;
+}
+
+.hero-image img{
+width:100%;
+max-width:100%;
+height:280px;
+object-fit:cover;
+border-radius:24px;
+}
+
 }
 
 /* PACKAGE CARD */
