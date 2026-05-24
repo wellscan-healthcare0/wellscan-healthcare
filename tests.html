@@ -18,9 +18,9 @@ font-family:'Poppins',sans-serif;
 }
 
 body{
-background:#f4fff7;
-padding:40px 7%;
-color:#222;
+  background:#f4fff7;
+  padding:40px 7% 0;  /* sirf bottom 0 karo */
+  color:#222;
 }
 
 .header{
@@ -375,7 +375,9 @@ displayTests(filtered);
   background:#0d2e1c;
   color:#e0e0e0;
   padding-top:60px;
-  margin-top:80px;
+  margin-top:0;        /* ye 80px se 0 karo */
+  margin-left:-7%;     /* body padding cancel karo */
+  margin-right:-7%;    /* body padding cancel karo */
   font-family:'Poppins',sans-serif;
 }
 .footer-top{
