@@ -529,19 +529,201 @@ Glucose, Yeast and more.
 
 </section>
 
-<footer>
+  <!-- ================= FOOTER START ================= -->
 
-<h2>Wellscan Healthcare</h2>
+<style>
+.main-footer{
+  background:#0d2e1c;
+  color:#e0e0e0;
+  padding-top:60px;
+  margin-top:80px;
+  font-family:'Poppins',sans-serif;
+}
+.footer-top{
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1.3fr;  /* ye check karo same hai? */
+  gap: 40px;
+  padding: 0 7% 50px;
+  align-items: start;  /* ye add karo */
+}
+.footer-brand .logo{
+  display:flex;
+  align-items:center;
+  margin-bottom:20px;
+}
+.footer-logo{
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+}
+.footer-brand p{
+  font-size:0.85rem;
+  color:#b0c4b8;
+  line-height:1.75;
+  margin-bottom:24px;
+}
+.social-links{
+  display:flex;
+  gap:12px;
+  margin-top:10px;
+}
+.social-links a{
+  width:40px;height:40px;
+  border:1.5px solid rgba(255,255,255,0.25);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  color:#ccc;
+  font-size:0.9rem;
+  text-decoration:none;
+  transition:all 0.3s;
+}
+.social-links a:hover{
+  background:#5dc067;
+  border-color:#5dc067;
+  color:#fff;
+  transform:translateY(-3px);
+}
+.footer-col h4{
+  font-size:1rem;
+  font-weight:700;
+  color:#fff;
+  margin-bottom:14px;
+}
+.footer-col h4::after{
+  content:'';
+  display:block;
+  width:36px;height:2.5px;
+  background:#9dc940;
+  margin-top:8px;
+  border-radius:2px;
+}
+.footer-col ul{list-style:none;}
+.footer-col ul li{
+  border-bottom:1px dashed rgba(255,255,255,0.1);
+  padding:10px 0;
+}
+.footer-col ul li:last-child{border-bottom:none;}
+.footer-col ul li a{
+  color:#b0c4b8;
+  text-decoration:none;
+  font-size:0.85rem;
+  display:flex;align-items:center;gap:10px;
+  transition:color 0.25s,gap 0.25s;
+}
+.footer-col ul li a::before{
+  content:'›';
+  color:#9dc940;
+  font-size:1.1rem;font-weight:700;
+}
+.footer-col ul li a:hover{color:#fff;gap:14px;}
+.contact-item{
+  display:flex;align-items:center;gap:14px;
+  padding:10px 0;
+  border-bottom:1px dashed rgba(255,255,255,0.1);
+}
+.contact-item:last-child{border-bottom:none;}
+.contact-icon{
+  width:38px;height:38px;
+  border:1.5px solid rgba(255,255,255,0.25);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  color:#9dc940;font-size:0.85rem;flex-shrink:0;
+}
+.contact-item span{font-size:0.85rem;color:#b0c4b8;}
+.footer-map{padding:0 7% 40px;}
+.footer-map iframe{
+  width:100%;height:210px;
+  border:none;border-radius:10px;display:block;
+}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,0.1);
+  text-align:center;
+  padding:18px;
+  font-size:0.8rem;
+  color:#7a9a85;
+}
+@media(max-width:900px){
+  .footer-top{grid-template-columns:1fr 1fr;padding:0 20px 40px;}
+  .footer-map{padding:0 20px 30px;}
+}
+@media(max-width:560px){
+  .footer-top{grid-template-columns:1fr;}
+}
+</style>
 
-<p>Accurate Results, Better Health</p>
+<footer class="main-footer">
 
-<br>
+  <div class="footer-top">
 
-<p>📞 +91 98113 56126</p>
+    <!-- BRAND -->
+    <div class="footer-brand footer-col">
+      <div class="logo">
+        <img src="https://img.sanishtech.com/u/c5194ef62fb3961bad8cd7ca7d3e037d.png" alt="WellScan Logo" class="footer-logo"/>
+      </div>
+      <p>Trusted pathology and diagnostic center providing accurate lab testing, diet consultation and home sample collection services across Delhi.</p>
+      <div class="social-links">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://wa.me/919811356126"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
 
-<p>📍 Karol Bagh, New Delhi</p>
+    <!-- QUICK LINKS -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tests.html">Tests</a></li>
+        <li><a href="diet-consultation.html">Diet Consultation</a></li>
+        <li><a href="#booking">Book Test</a></li>
+      </ul>
+    </div>
+
+    <!-- SERVICES -->
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#">Lab Test</a></li>
+        <li><a href="#">Diet Consultation</a></li>
+        <li><a href="#">Sample Collection</a></li>
+      </ul>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="footer-col">
+      <h4>Contact Details</h4>
+      <div class="contact-item">
+        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+        <span>+91 98113 56126</span>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+        <span>shanawaz.cnc@gmail.com</span>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <span>Karol Bagh, New Delhi</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- MAP -->
+  <div class="footer-map">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.674!2d77.1905!3d28.6514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d029d4a56e4e1%3A0x5cdfd8b50d3c2aab!2sKarol%20Bagh%2C%20New%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1700000000000"
+      allowfullscreen="" loading="lazy">
+    </iframe>
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Wellscan Healthcare. All Rights Reserved.
+  </div>
 
 </footer>
+
+<!-- ================= FOOTER END ================= -->
 
 <a class="whatsapp" href="https://wa.me/919811356126">
 <i class="fa-brands fa-whatsapp"></i>
