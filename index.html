@@ -387,6 +387,131 @@ font-size:34px;
       .hero-text h1{font-size:42px}
       .btns,.badges{justify-content:center}
 } 
+    .delivery-scene{
+
+position:relative;
+
+height:280px;
+
+overflow:hidden;
+
+margin-bottom:30px;
+
+}
+
+#riderWrap{
+
+position:absolute;
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+left:-250px;
+
+top:120px;
+
+z-index:10;
+
+}
+
+#person{
+
+font-size:65px;
+
+transition:.4s;
+
+}
+
+.bike-area{
+
+position:relative;
+
+}
+
+.bike{
+
+font-size:90px;
+
+}
+
+.bike-logo{
+
+position:absolute;
+
+width:55px;
+
+right:-20px;
+
+top:25px;
+
+}
+
+.popup-box{
+
+position:absolute;
+
+right:40px;
+
+top:20px;
+
+background:#0b7a3b;
+
+padding:12px 20px;
+
+border-radius:30px;
+
+color:#fff;
+
+font-weight:600;
+
+opacity:0;
+
+transform:translateY(-20px);
+
+transition:.6s;
+
+}
+
+.popup-box.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+@media(max-width:768px){
+
+.delivery-scene{
+
+height:220px;
+
+}
+
+#person{
+
+font-size:45px;
+
+}
+
+.bike{
+
+font-size:65px;
+
+}
+
+.bike-logo{
+
+width:40px;
+
+top:18px;
+
+}
+
+}
   /* FOOTER */
 
 .main-footer{
@@ -587,6 +712,35 @@ height:250px;
 </nav>
 
   <section class="hero">
+
+    <section class="hero">
+
+<div class="delivery-scene">
+
+<div id="riderWrap">
+
+<div id="person">🧑‍⚕️</div>
+
+<div class="bike-area">
+
+<div class="bike">🏍️</div>
+
+<img 
+src="https://img.sanishtech.com/u/539fd3065022c27d71979c253c56bd82.png"
+class="bike-logo">
+
+</div>
+
+</div>
+
+<div class="popup-box">
+✓ Home Collection Available
+</div>
+
+</div>
+
+<div class="hero-text">
+  
     <div class="hero-text">
       <h1>Trusted Pathology Tests at Your Doorstep</h1>
       <p>Book blood tests, health checkups, and home sample collection with accurate reports across Delhi.</p>
@@ -1628,8 +1782,106 @@ const fadeItems = document.querySelectorAll('.fade-item');
 fadeItems.forEach(item => {
 observer.observe(item);
 });
+  
 
 </script>
-  
+
+    <script>
+
+const animationJSON = {
+
+enter:2000,
+
+sitBike:3500,
+
+ride:6000,
+
+stop:9000,
+
+thumb:11000,
+
+popup:12000,
+
+restart:15000
+
+};
+
+const rider = document.getElementById("riderWrap");
+
+const person = document.getElementById("person");
+
+const popup = document.querySelector(".popup-box");
+
+function animateScene(){
+
+popup.classList.remove("show");
+
+person.innerHTML="🧑‍⚕️";
+
+rider.style.transition="none";
+
+rider.style.left="-250px";
+
+rider.style.top="120px";
+
+setTimeout(()=>{
+
+rider.style.transition="2s linear";
+
+rider.style.left="180px";
+
+},200);
+
+setTimeout(()=>{
+
+person.innerHTML="🧑‍⚕️";
+
+},animationJSON.sitBike);
+
+setTimeout(()=>{
+
+rider.style.transition="3s ease-in-out";
+
+rider.style.left="70%";
+
+rider.style.top="40px";
+
+},animationJSON.ride);
+
+setTimeout(()=>{
+
+rider.style.transition="2s ease";
+
+rider.style.left="45%";
+
+rider.style.top="120px";
+
+},animationJSON.stop);
+
+setTimeout(()=>{
+
+person.innerHTML="👍";
+
+},animationJSON.thumb);
+
+setTimeout(()=>{
+
+popup.classList.add("show");
+
+},animationJSON.popup);
+
+}
+
+animateScene();
+
+setInterval(
+
+animateScene,
+
+animationJSON.restart
+
+);
+
+</script>
 </body>
 </html>
