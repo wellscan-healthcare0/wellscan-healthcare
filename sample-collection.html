@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sample Collection | Wellscan Healthcare</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#f7fff9;
+overflow-x:hidden;
+color:#222;
+}
+
+/* NAVBAR */
+
+.navbar{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:18px 7%;
+
+background:#fff;
+
+position:sticky;
+top:0;
+
+z-index:999;
+
+box-shadow:0 4px 14px rgba(0,0,0,.08);
+
+}
+
+.logo-area{
+
+display:flex;
+align-items:center;
+gap:10px;
+
+}
+
+.logo-img{
+
+height:55px;
+
+}
+
+.logo-area h2{
+
+color:#0b7a3b;
+font-size:28px;
+
+}
+
+.logo-area p{
+
+font-size:13px;
+font-weight:700;
+color:#ff6b00;
+
+}
+
+.menu{
+
+display:flex;
+gap:24px;
+align-items:center;
+
+}
+
+.menu a{
+
+text-decoration:none;
+color:#222;
+font-weight:600;
+transition:.3s;
+
+}
+
+.menu a:hover{
+
+color:#0b7a3b;
+
+}
+
+.dropdown{
+
+position:relative;
+
+}
+
+.dropbtn{
+
+padding:12px 18px;
+
+border:none;
+
+background:#0b7a3b;
+
+color:#fff;
+
+border-radius:12px;
+
+font-weight:600;
+
+cursor:pointer;
+
+}
+
+.dropdown-content{
+
+display:none;
+
+position:absolute;
+
+top:52px;
+
+left:0;
+
+background:#fff;
+
+width:240px;
+
+border-radius:16px;
+
+overflow:hidden;
+
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+
+}
+
+.dropdown-content a{
+
+display:block;
+
+padding:14px 18px;
+
+}
+
+.dropdown-content a:hover{
+
+background:#f2fff7;
+
+}
+
+.dropdown:hover .dropdown-content{
+
+display:block;
+
+}
+
+/* HERO */
+
+.page-banner{
+
+height:330px;
+
+background:
+linear-gradient(rgba(5,40,20,.55),rgba(5,40,20,.55)),
+url('https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=1400&auto=format&fit=crop');
+
+background-size:cover;
+
+background-position:center;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+text-align:center;
+
+}
+
+.page-banner h1{
+
+font-size:72px;
+
+color:#fff;
+
+animation:fadeDown 1s ease;
+
+}
+
+/* SECTION */
+
+.lab-section{
+
+padding:90px 7%;
+
+display:grid;
+
+grid-template-columns:2fr 1fr;
+
+gap:45px;
+
+}
+
+.img-wrap{
+
+overflow:hidden;
+
+border-radius:28px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.12);
+
+opacity:0;
+
+transform:translateY(40px);
+
+transition:1s;
+
+}
+
+.img-wrap img{
+
+width:100%;
+
+display:block;
+
+transition:1s;
+
+}
+
+.img-wrap:hover img{
+
+transform:scale(1.08);
+
+}
+
+.lab-content{
+
+margin-top:35px;
+
+opacity:0;
+
+transform:translateY(40px);
+
+transition:1s;
+
+}
+
+.lab-content h2{
+
+font-size:40px;
+
+margin-bottom:20px;
+
+color:#0b7a3b;
+
+}
+
+.lab-content p{
+
+line-height:1.9;
+
+color:#555;
+
+font-size:17px;
+
+}
+
+.feature-points{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:15px;
+
+margin-top:30px;
+
+}
+
+.feature-points span{
+
+padding:12px 18px;
+
+background:#0b7a3b;
+
+color:#fff;
+
+border-radius:999px;
+
+transition:.4s;
+
+cursor:pointer;
+
+}
+
+.feature-points span:hover{
+
+transform:translateY(-5px);
+
+background:#ff6b00;
+
+}
+
+.side-card{
+
+background:#fff;
+
+padding:35px;
+
+border-radius:26px;
+
+margin-bottom:25px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+transition:.4s;
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+.side-card:hover{
+
+transform:translateY(-10px);
+
+}
+
+.side-card h3{
+
+font-size:30px;
+
+margin-bottom:20px;
+
+color:#0b7a3b;
+
+}
+
+.side-card a{
+
+display:block;
+
+margin-bottom:18px;
+
+text-decoration:none;
+
+color:#444;
+
+padding-bottom:12px;
+
+border-bottom:1px solid #eee;
+
+}
+
+.help-card{
+
+background:linear-gradient(135deg,#ecfff4,#ddf8e8);
+
+}
+
+.help-btn{
+
+display:inline-block;
+
+margin-top:15px;
+
+padding:14px 22px;
+
+background:#0b7a3b;
+
+color:#fff;
+
+text-decoration:none;
+
+border-radius:12px;
+
+}
+
+.help-btn:hover{
+
+background:#ff6b00;
+
+}
+
+.show{
+
+opacity:1 !important;
+
+transform:translateY(0px) !important;
+
+}
+
+@keyframes fadeDown{
+
+from{
+
+opacity:0;
+transform:translateY(-40px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.navbar{
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+.menu{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+.page-banner{
+
+height:240px;
+
+}
+
+.page-banner h1{
+
+font-size:42px;
+
+}
+
+.lab-section{
+
+grid-template-columns:1fr;
+
+padding:70px 20px;
+
+}
+
+.lab-content h2{
+
+font-size:32px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+<div class="logo-area">
+
+<img src="https://i.ibb.co/zH79Y9Lc/logo.png" class="logo-img">
+
+<div>
+
+<h2>Wellscan</h2>
+
+<p>Healthcare</p>
+
+</div>
+
+</div>
+
+<div class="menu">
+
+<a href="index.html">Home</a>
+
+<div class="dropdown">
+
+<button class="dropbtn">
+
+Packages
+
+</button>
+
+<div class="dropdown-content">
+
+<a href="basic-package.html">Basic Package</a>
+
+<a href="#">Vitamin Package</a>
+
+<a href="#">Male Package</a>
+
+<a href="#">Female Package</a>
+
+</div>
+
+</div>
+
+<a href="tests.html">Tests</a>
+
+<a href="#booking">Booking</a>
+
+<a href="contact.html">Contact</a>
+
+</div>
+
+</nav>
+
+<section class="page-banner">
+
+<h1>Sample Collection</h1>
+
+</section>
+
+<section class="lab-section">
+
+<div>
+
+<div class="img-wrap">
+
+<img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1400&auto=format&fit=crop">
+
+</div>
+
+<div class="lab-content">
+
+<h2>Blood Sample Collection At Your Doorstep</h2>
+
+<p>
+
+Wellscan Healthcare offers trusted pathology testing services with modern technology, experienced technicians, and fast report delivery. We ensure accurate diagnostics with home sample collection across Delhi.
+
+</p>
+
+<div class="feature-points">
+
+<span>✔ Home Collection</span>
+
+<span>✔ Accurate Reports</span>
+
+<span>✔ Fast Reports</span>
+
+<span>✔ NABL Standards</span>
+
+</div>
+
+</div>
+
+</div>
+
+<div>
+
+<div class="side-card">
+
+<h3>Other Services</h3>
+
+<a href="diet-consultation.html">Diet Consultation</a>
+
+<a href="lab-test.html">Lab Test</a>
+
+</div>
+
+<div class="side-card help-card">
+
+<h3>Need Help?</h3>
+
+<p>
+
+Book convenient home sample collection with trained professionals and fast reporting across Delhi
+
+</p>
+
+<a class="help-btn" href="#booking">
+
+Contact Us
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+const items=document.querySelectorAll(
+'.img-wrap,.lab-content,.side-card'
+);
+
+const observer=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add('show');
+
+}
+
+});
+
+});
+
+items.forEach(item=>{
+
+observer.observe(item);
+
+});
+
+</script>
+
+</body>
+
+</html>
+
+<style>
+.main-footer{
+  background:#0d2e1c;
+  color:#e0e0e0;
+  padding-top:60px;
+  margin-top:80px;
+  font-family:'Poppins',sans-serif;
+}
+.footer-top{
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1.3fr;  /* ye check karo same hai? */
+  gap: 40px;
+  padding: 0 7% 50px;
+  align-items: start;  /* ye add karo */
+}
+.footer-brand .logo{
+  display:flex;
+  align-items:center;
+  margin-bottom:20px;
+}
+.footer-logo{
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+}
+.footer-brand p{
+  font-size:0.85rem;
+  color:#b0c4b8;
+  line-height:1.75;
+  margin-bottom:24px;
+}
+.social-links{
+  display:flex;
+  gap:12px;
+  margin-top:10px;
+}
+.social-links a{
+  width:40px;height:40px;
+  border:1.5px solid rgba(255,255,255,0.25);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  color:#ccc;
+  font-size:0.9rem;
+  text-decoration:none;
+  transition:all 0.3s;
+}
+.social-links a:hover{
+  background:#5dc067;
+  border-color:#5dc067;
+  color:#fff;
+  transform:translateY(-3px);
+}
+.footer-col h4{
+  font-size:1rem;
+  font-weight:700;
+  color:#fff;
+  margin-bottom:14px;
+}
+.footer-col h4::after{
+  content:'';
+  display:block;
+  width:36px;height:2.5px;
+  background:#9dc940;
+  margin-top:8px;
+  border-radius:2px;
+}
+.footer-col ul{list-style:none;}
+.footer-col ul li{
+  border-bottom:1px dashed rgba(255,255,255,0.1);
+  padding:10px 0;
+}
+.footer-col ul li:last-child{border-bottom:none;}
+.footer-col ul li a{
+  color:#b0c4b8;
+  text-decoration:none;
+  font-size:0.85rem;
+  display:flex;align-items:center;gap:10px;
+  transition:color 0.25s,gap 0.25s;
+}
+.footer-col ul li a::before{
+  content:'›';
+  color:#9dc940;
+  font-size:1.1rem;font-weight:700;
+}
+.footer-col ul li a:hover{color:#fff;gap:14px;}
+.contact-item{
+  display:flex;align-items:center;gap:14px;
+  padding:10px 0;
+  border-bottom:1px dashed rgba(255,255,255,0.1);
+}
+.contact-item:last-child{border-bottom:none;}
+.contact-icon{
+  width:38px;height:38px;
+  border:1.5px solid rgba(255,255,255,0.25);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  color:#9dc940;font-size:0.85rem;flex-shrink:0;
+}
+.contact-item span{font-size:0.85rem;color:#b0c4b8;}
+.footer-map{padding:0 7% 40px;}
+.footer-map iframe{
+  width:100%;height:210px;
+  border:none;border-radius:10px;display:block;
+}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,0.1);
+  text-align:center;
+  padding:18px;
+  font-size:0.8rem;
+  color:#7a9a85;
+}
+@media(max-width:900px){
+  .footer-top{grid-template-columns:1fr 1fr;padding:0 20px 40px;}
+  .footer-map{padding:0 20px 30px;}
+}
+@media(max-width:560px){
+  .footer-top{grid-template-columns:1fr;}
+}
+</style>
+
+<footer class="main-footer">
+
+  <div class="footer-top">
+
+    <!-- BRAND -->
+    <div class="footer-brand footer-col">
+      <div class="logo">
+        <img src="https://img.sanishtech.com/u/c5194ef62fb3961bad8cd7ca7d3e037d.png" alt="WellScan Logo" class="footer-logo"/>
+      </div>
+      <p>Trusted pathology and diagnostic center providing accurate lab testing, diet consultation and home sample collection services across Delhi.</p>
+      <div class="social-links">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://wa.me/919811356126"><i class="fa-brands fa-whatsapp"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <!-- QUICK LINKS -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tests.html">Tests</a></li>
+  <li><a href="contact.html">Contact-Us</a></li>
+        <li><a href="https://wellscan-healthcare0.github.io/wellscan-healthcare/index.html#booking">Book Test</a></li>
+      </ul>
+    </div>
+
+    <!-- SERVICES -->
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="lab-test.html">Lab Test</a></li>
+        <li><a href="diet-consultation.html">Diet Consultation</a></li>
+        <li><a href="sample-collection.html">Sample Collection</a></li>
+      </ul>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="footer-col">
+      <h4>Contact Details</h4>
+      <div class="contact-item">
+        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+        <span>‎+91 72919 46454</span>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+        <span>support@wellscanhealthcare.in</span>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <span>A 103 tilak nagar new delhi 110018</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- MAP -->
+  <div class="footer-map">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.674!2d77.1905!3d28.6514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d029d4a56e4e1%3A0x5cdfd8b50d3c2aab!2sKarol%20Bagh%2C%20New%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1700000000000"
+      allowfullscreen="" loading="lazy">
+    </iframe>
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Wellscan Healthcare. All Rights Reserved.
+  </div>
+
+</footer>
