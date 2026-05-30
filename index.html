@@ -109,6 +109,7 @@ justify-content:center;
 
 }
     .hero{min-height:90vh;display:flex;align-items:center;justify-content:space-between;padding:60px 7%;gap:40px;flex-wrap:wrap;background:linear-gradient(135deg,#effff5,#dff8ea)}
+    .hero{position:relative;}
     .hero-text{flex:1;min-width:300px}
     .hero-text h1{font-size:58px;line-height:1.15;color:#083d22;margin-bottom:20px}
     .hero-text p{font-size:18px;color:#555;margin-bottom:25px}
@@ -600,6 +601,12 @@ height:250px;
         <div class="badge">✔ Fast Reports</div>
       </div>
     </div>
+
+    <div class="hero-animation">
+  <video autoplay muted loop playsinline>
+    <source src="delivery-animation.webm" type="video/webm">
+  </video>
+</div>
     
 
     <img src="https://images.unsplash.com/photo-1579165466741-7f35e4755660?q=80&w=1200&auto=format&fit=crop" alt="Lab">
@@ -1409,7 +1416,28 @@ bottom:15px;
 }
 
 }
+.hero-animation{
+margin-top:25px;
+width:260px;
+}
 
+.hero-animation video{
+width:100%;
+height:auto;
+display:block;
+background:transparent;
+object-fit:contain;
+}
+
+@media(max-width:768px){
+
+.hero-animation{
+margin:25px auto 0;
+width:200px;
+}
+
+}
+  
 </style>
 
 </head>
