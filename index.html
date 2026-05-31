@@ -165,15 +165,7 @@ img{max-width:100%;height:auto;display:block;}
   bottom:-70px;left:3%;pointer-events:none;animation:glow 11s ease-in-out infinite reverse;}
 @keyframes glow{0%,100%{transform:scale(1);}50%{transform:scale(1.1) translate(15px,-15px);}}
 
-.hero-animation{
-  position:absolute;top:50%;left:50%;
-  transform:translate(-50%,-50%);
-  width:100%;height:100%;
-  object-fit:cover;
-  opacity:.18;z-index:0;pointer-events:none;
-}
-
-.hero-text{flex:1;min-width:280px;max-width:560px;position:relative;z-index:2;
+.hero-text{flex:1;min-width:280px;max-width:540px;position:relative;z-index:2;
   animation:fadeUp .8s ease both;}
 .hero-text h1{font-size:46px;line-height:1.15;color:#083d22;margin-bottom:18px;font-weight:800;}
 .hero-text p{font-size:16px;color:#4a6b52;margin-bottom:24px;line-height:1.7;}
@@ -188,11 +180,27 @@ img{max-width:100%;height:auto;display:block;}
 .badge{background:#fff;padding:10px 16px;border-radius:12px;font-weight:600;
   font-size:13px;box-shadow:0 3px 10px rgba(0,0,0,.07);color:#083d22;}
 
-.hero-img-wrap{flex:1;min-width:260px;max-width:480px;position:relative;z-index:2;
-  animation:fadeLeft .9s ease .2s both;}
-.hero-img-wrap img{width:100%;border-radius:22px;box-shadow:0 20px 50px rgba(0,0,0,.13);
-  animation:float 5s ease-in-out infinite;}
-@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
+/* VIDEO WRAP — same size as old image */
+.hero-video-wrap{
+  flex:1;
+  min-width:280px;
+  max-width:500px;
+  position:relative;
+  z-index:2;
+  animation:fadeLeft .9s ease .2s both;
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:0 20px 50px rgba(11,122,59,.18);
+  background:#d4f5e4;
+  aspect-ratio:4/3;
+}
+.hero-video-wrap video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  border-radius:22px;
+}
 
 /* ══════════════════════════════════
    POPULAR PACKAGES
@@ -365,8 +373,7 @@ section{padding:70px 5%;}
   .btn{padding:12px 20px;font-size:14px;}
   .badges{justify-content:center;}
   .badge{font-size:12px;padding:8px 13px;}
-  .hero-img-wrap{max-width:100%;}
-  .hero-animation{width:100%;height:100%;object-fit:cover;}
+  .hero-video-wrap{max-width:100%;width:100%;aspect-ratio:4/3;}
 
   /* packages */
   #popular-packages{padding:60px 4%;}
@@ -414,6 +421,7 @@ section{padding:70px 5%;}
 
   .hero{padding:36px 4% 44px;}
   .hero-text h1{font-size:26px;}
+  .hero-video-wrap{max-width:100%;width:100%;aspect-ratio:4/3;}
   .hero-text p{font-size:14px;}
   .btn{padding:11px 17px;font-size:13.5px;}
 
@@ -509,11 +517,6 @@ section{padding:70px 5%;}
 
 <!-- ══════════ HERO ══════════ -->
 <section class="hero">
-  <video class="hero-animation" autoplay muted loop playsinline>
-    <source src="new1.animation.webm.mp4" type="video/mp4"/>
-    <source src="new1.animation.webm.mp4" type="video/webm"/>
-  </video>
-
   <div class="hero-text">
     <h1>Trusted Pathology Tests at Your Doorstep</h1>
     <p>Book blood tests, health checkups, and home sample collection with accurate reports across Delhi.</p>
@@ -528,8 +531,11 @@ section{padding:70px 5%;}
     </div>
   </div>
 
-  <div class="hero-img-wrap">
-    <img src="https://images.unsplash.com/photo-1579165466741-7f35e4755660?q=80&w=900&auto=format&fit=crop" alt="Lab"/>
+  <div class="hero-video-wrap">
+    <video autoplay muted loop playsinline>
+      <source src="new1.animation.webm.mp4" type="video/mp4"/>
+      <source src="new1.animation.webm.mp4" type="video/webm"/>
+    </video>
   </div>
 </section>
 
