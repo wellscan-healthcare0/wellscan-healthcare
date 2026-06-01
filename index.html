@@ -248,6 +248,36 @@ img{max-width:100%;height:auto;display:block;}
   box-shadow:0 6px 18px rgba(11,122,59,.25);}
 .nav-btn:hover{transform:scale(1.08);}
 
+.package-image{
+  width:100%;
+  height:180px;
+  border-radius:16px;
+  overflow:hidden;
+  margin:15px 0 20px;
+}
+
+.package-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.4s;
+}
+
+.package-card:hover .package-image img{
+  transform:scale(1.05);
+}
+
+.offer-badge{
+  display:inline-block;
+  background:#ff6b00;
+  color:#fff;
+  padding:6px 12px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:700;
+  margin-left:8px;
+}
+   
 /* badge colors */
 .blue .pkg-badge{background:#2563eb;}
 .pink .pkg-badge{background:#db2777;}
@@ -363,6 +393,10 @@ section{padding:70px 5%;}
   .logo-area h2{font-size:17px;}
   .logo-area p{font-size:9.5px;}
 
+.package-image{
+  height:140px;
+}
+   
   /* hero */
   .hero{
     min-height:auto;
@@ -551,9 +585,15 @@ section{padding:70px 5%;}
     <div class="package-slider" id="packageSlider">
 
       <div class="package-card" onclick="location.href='basic-package.html'">
-        <span class="pkg-badge">Popular</span>
+        <div>
+   <span class="pkg-badge">Popular</span>
+   <span class="offer-badge">20% OFF</span>
+</div>
         <h3>Basic Package</h3>
         <p class="desc">Routine health checkup for daily wellness monitoring</p>
+         <div class="package-image">
+   <img src="https://your-image-url.com/basic-package.jpg" alt="Basic Package">
+</div>
         <ul>
           <li><span class="li-ico"><i class="fa-solid fa-droplet"></i></span>CBC Test</li>
           <li><span class="li-ico"><i class="fa-solid fa-flask"></i></span>LFT Test</li>
